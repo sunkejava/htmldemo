@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <title>知名常用jQuery表单验证插件FormValidator</title>
+	<meta name="author" content="JS代码网" />
+	<meta name="keywords" content="JS代码,JS特效,jQuery表单验证插件,JS表单验证,JS表单提交,jQuery表单提交验证,jQuery check form,jQuery表单插件" />
+	<meta name="description" content="非常实用的jQuery表单验证插件,JS表单验证代码,兼容性非常好,JS代码网推荐下载" />   
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" href="Images/css.css" rel="Stylesheet" />
+    <script type="text/javascript" src="Scripts/jquery1.2.6.js"></script>
+    <script type="text/javascript" src="Scripts/jQuery.FormValidator.js"></script>
+</head>
+<body>
+    <table cellpadding="0" cellspacing="0" class="TopMenu">
+        <tr>
+            <th>JS代码网</th>
+            <td></td>
+        </tr>
+    </table>
+    <h5>表单验证方式</h5>
+    <h6>示例1：</h6>
+    <fieldset>
+        <legend>默认验证通过后自动提交表单</legend>      
+        <form id="FormDemo10_0" action="Demo.10.htm" method="post">
+            <dl style="vertical-align:middle;">
+                <dt>请选择你的学历：</dt>
+                <dd><select id="DdlEducation"><option value="">学历选择</option><option value="0">无产阶级</option><option value="1">小学</option><option value="2">中学</option><option value="3">高中</option></select><tt id="TipEducation"></tt></dd>
+                <dd><input type="submit" value="提交" /></dd>
+                <dd style="color:Red;">注意，第一个option，作为不可选的项，其值必须设置为""，空字符串。</dd>
+            </dl>                        
+        </form>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#FormDemo10_0").SetValidateSettings({});
+                $("#DdlEducation").SetValidateSettings({
+                    FormValidate: {
+                        Empty: {
+                            Value: true,
+                            Message: "请选择你的学历"
+                        }
+                    },
+                    Message: {
+                        Text: {
+                            Show: "学历很重要，选中一个吧",
+                            Success: "嗯，这个可以！",
+                            Error: "这也会错？",
+                            Focus: "考虑清楚哦"
+                        },
+                        MessageSpaceHolderID: "TipEducation"
+                    }
+                });
+            });
+        </script>
+    </fieldset>
+    <h6>示例2：</h6>
+    <fieldset>
+        <legend>手动验证</legend>      
+        <form id="FormDemo10_1" action="Demo.10.htm" method="post">
+            <dl style="vertical-align:middle;">
+                <dt>登录ID</dt>
+                <dd><input type="text" id="LoginName" /><tt id="TipLoginName"></tt></dd>
+                <dt>Email：</dt>
+                <dd><input type="text" id="Email" /><tt id="TipEmail"></tt></dd>
+                <dt>手机号：</dt>
+                <dd><input type="text" id="Mobile" /><tt id="TipMobile"></tt></dd>
+                <dd><input type="submit" value="提交" onclick="return CheckForm();" /></dd>
+            </dl>                        
+        </form>
+        <script type="text/javascript">
+            function CheckForm() {
+                return $("#FormDemo10_1").FormValidate();
+            }
+            $(document).ready(function() {
+                $("#FormDemo10_1").SetValidateSettings({ Config: { AutoSubmit: false} });
+                $("#LoginName").SetValidateSettings({
+                    FormValidate: {
+                        Empty: {
+                            Value: true
+                        },
+                        Format: {
+                            Value: "^\\w+$",
+                            Message: "登录名格式不正确"
+                        }
+                    },
+                    Message: {
+                        Text: {
+                            Show: "只能由数字、26个英文字母或者下划线组成",
+                            Success: "正确！",
+                            Error: "请输入登录名",
+                            Focus: "输入中..."
+                        },
+                        MessageSpaceHolderID: "TipLoginName"
+                    }
+                });
+                $("#Email").SetValidateSettings({
+                    FormValidate: {
+                        Empty: {
+                            Value: true
+                        },
+                        Format: {
+                            Value: /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/,
+                            Message: "邮件格式不正确"
+                        }
+                    },
+                    Message: {
+                        Text: {
+                            Show: "请输入邮件地址",
+                            Success: "正确！",
+                            Error: "邮件格式错误",
+                            Focus: "输入中..."
+                        },
+                        MessageSpaceHolderID: "TipEmail"
+                    }
+                });
+                $("#Mobile").SetValidateSettings({
+                    FormValidate: {
+                        Empty: {
+                            Value: true
+                        },
+                        Format: {
+                            Value: new RegExp("^(13|15)[0-9]{9}$"),
+                            Message: "手机号格式不正确"
+                        }
+                    },
+                    Message: {
+                        Text: {
+                            Show: "请输入手机号码",
+                            Success: "正确！",
+                            Error: "必须输入手机号",
+                            Focus: "输入中..."
+                        },
+                        MessageSpaceHolderID: "TipMobile"
+                    }
+                });
+            });
+        </script>
+    </fieldset>
+    <div class="BottomCopyright">
+        <div>大白制作·保留所有权利<br /><span>&copy;2009 Dabai All rights reserved . </span></div>
+    </div>
+</body>
+</html>

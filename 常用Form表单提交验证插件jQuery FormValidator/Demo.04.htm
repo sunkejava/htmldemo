@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>知名常用jQuery表单验证插件FormValidator</title>
+	<meta name="author" content="JS代码网" />
+	<meta name="keywords" content="JS代码,JS特效,jQuery表单验证插件,JS表单验证,JS表单提交,jQuery表单提交验证,jQuery check form,jQuery表单插件" />
+	<meta name="description" content="非常实用的jQuery表单验证插件,JS表单验证代码,兼容性非常好,JS代码网推荐下载" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" href="Images/css.css" rel="Stylesheet" />
+    <script type="text/javascript" src="Scripts/jquery1.2.6.js"></script>
+    <script type="text/javascript" src="Scripts/jQuery.FormValidator.js"></script>
+</head>
+<body>
+    <table cellpadding="0" cellspacing="0" class="TopMenu">
+        <tr>
+            <th>JS代码网</th>
+            <td></td>
+        </tr>
+    </table>
+    <h5>控件值范围</h5>
+    <h6>示例1：</h6>
+    <fieldset>
+        <legend>限制控件值范围</legend>      
+        <form id="FormDemo04_0" action="Demo.04.htm" method="post">
+            <dl style="vertical-align:middle;">
+                <dt>年龄：</dt>
+                <dd><input type="text" id="Age" /><tt id="TipAge"></tt></dd>
+                <dt>编号[A--Z]：</dt>
+                <dd><input type="text" id="Number" /><tt id="TipNumber"></tt></dd>
+                <dd><input type="submit" value="提交" /></dd>
+            </dl>                        
+        </form>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#FormDemo04_0").SetValidateSettings({});
+                $("#Age").SetValidateSettings({
+                    FormValidate: {
+                        Empty: {
+                            Value: true
+                        },
+                        Type: {
+                            Value: "UInt16",
+                            Message: "必须是正整数类型"
+                        },
+                        MaxValue: {
+                            Value: 150,
+                            Message: "年龄不能大于150"
+                        },
+                        MinValue: {
+                            Value: 18,
+                            Message: "您好，这里是18Sex，拒绝未成年人来注册。"
+                        }
+                    },
+                    Message: {
+                        Text: {
+                            Show: "请输入您的年龄！",
+                            Success: "正确！",
+                            Focus: "好好考虑哦",
+                            Error: "年龄必须输入"
+                        },
+                        MessageSpaceHolderID: "TipAge"
+                    }
+                });
+                $("#Number").SetValidateSettings({
+                    FormValidate: {
+                        Empty: {
+                            Value: true
+                        },
+                        MinValue: {
+                            Value: "A",
+                            Message: "最小值只能是A"
+                        },
+                        MaxValue: {
+                            Value: "Z",
+                            Message: "最大值只能是Z"
+                        },
+                        MaxLength: {
+                            Value: 1,
+                            Message: "只能输入一位字符"
+                        }
+                    },
+                    Message: {
+                        Text: {
+                            Show: "请输入A--Z！",
+                            Success: "正确！",
+                            Focus: "好好考虑哦",
+                            Error: "请输入一位的英文字符大写。"
+                        },
+                        MessageSpaceHolderID: "TipNumber"
+                    }
+                });
+            });
+        </script>
+    </fieldset>
+    <div class="BottomCopyright">
+        <div>大白制作·保留所有权利<br /><span>&copy;2009 Dabai All rights reserved . </span></div>
+    </div>
+</body>
+</html>

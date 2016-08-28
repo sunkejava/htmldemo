@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网友manhua原创jQuery消息提示插件JS消息框- JS代码网</title>
+<meta name="author" content="JS代码网" />
+<meta name="keywords" content="JS代码,JS代码大全,JS广告代码,JS消息提示框插件,jQuery消息提示框" />
+<meta name="description" content="非常实用的网友manhua原创jQuery消息提示插件,兼容性非常好,JS代码网推荐下载" />
+<!--JS代码网顶部CSS-->
+<link href="http://www.js-css.cn/jscode/jscode.css" rel="stylesheet" />
+<!--JS代码网顶部CSS-->
+<link rel="stylesheet" type="text/css" href="css/manhuaTip.1.0.css">
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/manhuaTip.1.0.js"></script>
+<script type="text/javascript">
+$(function (){
+	$(".manhuaTip").manhuaTip({					       
+		Event : "click",//可选				       
+		timeOut : 2000//停留时间
+	});
+});
+</script>
+
+</head>
+<body>
+<!--JS代码网头部-->
+<div class="back" style="margin-bottom:20px;"> 
+  <div class="pl10">
+    <ul class="ulcls">
+	<li class="logowidth">
+	<a href="http://www.js-css.cn" title="JS代码网"><img src="http://www.js-css.cn/images/toplogo.png" border="0"/></a>	
+	</li>
+	<li style="width:800px;">
+	<div class="menupos">
+	<ul style="list-style:none;">
+	<li class="firstli"><a href="http://www.js-css.cn" class="lia">首页</a></li>
+	<li class="sencli"><a href="http://www.js-css.cn/a/jscode/" class="lia">JS代码大全</a></li>
+	<li class="threeli"><a href="http://www.js-css.cn/a/css/" class="lia">CSS样式</a></li>
+	<li class="threeli"><a href="http://www.js-css.cn/a/html5/" class="lia">HTML5</a></li>
+	<li class="threeli"><a href="http://www.js-css.cn/a/openframe/" class="lia">开源项目</a></li>
+	<li class="threeli"><a href="http://www.js-css.cn/a/tools/" class="lia">资源工具</a></li>	
+	</ul>
+	</div>
+	</li>     
+    </ul>
+  </div>
+  <div class="textpos">整理：<a href="http://www.js-css.cn" class="texta">JS代码网</a><br>来源：<a href="#" class="texta">互联网</a> <br>本站QQ交流学习群：<a href="#" class="texta">281362453</a> <br> 赞助网店：<a href="http://wuhaodian.taobao.com" class="texta">http://wuhaodian.taobao.com</a></div>
+</div>
+<!--JS代码网头部-->
+<span style="margin-left:100px;">
+<pre>
+
+&lt;script type="text/javascript"&gt;
+$(function (){
+	$(".manhuaTip").manhuaTip({					       
+		Event : "click",//可选				       
+		timeOut : 200//停留时间
+	});
+});
+&lt;/script&gt;
+用法如下：
+1、一共有4种提示操作，1、错误（error）  2、 成功（succ）  3、消息（notice）  4、等待（loading）
+2、每个使用的元素加上以下3种属性
+   1）class必需为manhuaTip
+   2) ty类别必需为第一条的4种之一
+   3）msg提示的消息
+用法如下：
+&lt;input type="button" value="错误" class="manhuaTip" ty="error" msg="出错了" /&gt;
+&lt;input type="button"  value="成功" class="manhuaTip" ty="succ" msg="提示插件发布成功了" /&gt;
+&lt;input type="button"  value="消息" class="manhuaTip" ty="notice" msg="提示插件发布了" /&gt;
+&lt;input type="button"  value="等待" class="manhuaTip" ty="loading" msg="正在提交您的请求，请稍候..." /&gt;
+</pre>
+</span>
+<br /><br />
+
+<input type="button" value="错误" class="manhuaTip" ty="error" msg="出错了" />
+<input type="button"  value="成功" class="manhuaTip" ty="succ" msg="插件发布成功了" />
+<input type="button"  value="消息" class="manhuaTip" ty="notice" msg="提示插件发布了" />
+<input type="button"  value="等待" class="manhuaTip" ty="loading" msg="正在提交您的请求，请稍候..." />
+</body>
+</html>

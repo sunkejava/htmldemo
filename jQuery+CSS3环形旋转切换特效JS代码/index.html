@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery+CSS3环形旋转切换特效JS代码- JS代码网</title>
+<link href='css/feature.presenter.1.5.css' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+
+<div id="test-element"></div>
+
+<script src="js/feature.presenter.1.5.min.js"></script>
+
+<script>
+
+/* 图片地址可以是相对路径或绝对路径；标题和描述可以包含HTML */
+var settings = [ {image: 'images/zzsc1.png', heading: 'JS代码网', description: 'www.js-css.cn'}, 
+				{image: 'images/zzsc2.png', heading: 'JS代码网', description: 'www.js-css.cn'}, 
+				{image: 'images/zzsc3.png', heading: 'JS代码网', description: 'www.js-css.cn'}, 
+				{image: 'images/zzsc4.png', heading: 'JS代码网', description: 'www.js-css.cn'}, 
+				{image: 'images/zzsc5.png', heading: 'JS代码网', description: 'www.js-css.cn'},
+				{image: 'images/zzsc6.png', heading: 'JS代码网', description: 'www.js-css.cn'}
+				];
+
+var options = {
+	circle_radius: 220,
+	normal_feature_size: 100,
+	highlighted_feature_size: 150,
+	top_margin: 100,
+	bottom_margin: 50,
+	spacing: 40,
+	min_padding: 50,
+	heading_font_size: 30,
+	description_font_size: 20,
+	type: 'image'
+};
+
+var fp = new FeaturePresenter($("#test-element"), settings, options);
+fp.createPresenter();
+
+</script>
+</body>
+</html>
+<div style="display:none">
+	<script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F6f798e51a1cd93937ee8293eece39b1a' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5718743'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s9.cnzz.com/stat.php%3Fid%3D5718743%26show%3Dpic2' type='text/javascript'%3E%3C/script%3E"));</script>
+	</div>

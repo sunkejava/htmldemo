@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>网友晓天原创分享jQuery带缩略图焦点图片幻灯片轮播特效 - JS代码网</title>
+<meta name="author" content="JS代码网" />
+<meta name="keywords" content="JS代码,JS代码大全,JS广告代码,JS焦点图代码,焦点图切换,图片幻灯片特效,jQuery焦点图" />
+<meta name="description" content="非常实用的JS幻灯片带缩略图图片切换轮播代码,焦点图切换代码,兼容性非常好,JS代码网推荐下载" />
+<!--JS代码网顶部CSS-->
+<link href="http://www.js-css.cn/jscode/jscode.css" rel="stylesheet" />
+<!--JS代码网顶部CSS-->
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<style type="text/css">
+img, div { behavior: url(iepng/iepngfix.htc); }
+</style>
+<script type="text/javascript" src="iepng/iepngfix_tilebg.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<!--JS代码网头部-->
+<div class="back" style="margin-bottom:20px;"> 
+  <div class="pl10">
+    <ul class="ulcls">
+	<li class="logowidth">
+	<a href="http://www.js-css.cn" title="JS代码网"><img src="http://www.js-css.cn/images/toplogo.png" border="0"/></a>	
+	</li>
+	<li style="width:800px;">
+	<div class="menupos">
+	<ul style="list-style:none;">
+	<li class="firstli"><a href="http://www.js-css.cn" class="lia">首页</a></li>
+	<li class="sencli"><a href="http://www.js-css.cn/a/jscode/" class="lia">JS代码大全</a></li>
+	<li class="threeli"><a href="http://www.js-css.cn/a/css/" class="lia">CSS样式</a></li>
+	<li class="threeli"><a href="http://www.js-css.cn/a/html5/" class="lia">HTML5</a></li>
+	<li class="threeli"><a href="http://www.js-css.cn/a/openframe/" class="lia">开源项目</a></li>
+	<li class="threeli"><a href="http://www.js-css.cn/a/tools/" class="lia">资源工具</a></li>	
+	</ul>
+	</div>
+	</li>     
+    </ul>
+  </div>
+  <div class="textpos">整理：<a href="http://www.js-css.cn" class="texta">JS代码网</a><br>来源：<a href="#" class="texta">互联网</a> <br>本站QQ交流学习群：<a href="#" class="texta">281362453</a> <br> 赞助网店：<a href="http://wuhaodian.taobao.com" class="texta">http://wuhaodian.taobao.com</a></div>
+</div>
+<!--JS代码网头部-->
+
+
+<div id="box">
+  <ul class="big_img">
+    <li><a href="http://www.js-css.cn"><img src="img/2.jpg" alt=""/></a></li>
+    <li><a href="http://www.js-css.cn"><img src="img/3.jpg" alt=""/></a></li>
+    <li><a href="http://www.js-css.cn"><img src="img/big0020121113201926.jpg" alt=""/></a></li>
+    <li><a href="http://www.js-css.cn"><img src="img/big0120120425202913.jpg" alt=""/></a></li>
+    <li><a href="http://www.js-css.cn"><img src="img/big0220120423201353.jpg" alt=""/></a></li>
+    <li><a href="http://www.js-css.cn"><img src="img/big0220120425203714.jpg" alt=""/></a></li>
+    <li><a href="http://www.js-css.cn"><img src="img/big0320121112195755.jpg" alt=""/></a></li>
+    <li><a href="http://www.js-css.cn"><img src="img/big0420121112210403.jpg" alt=""/></a></li>
+    <li><a href="http://www.js-css.cn"><img src="img/big0520121113194658.jpg" alt=""/></a></li>
+    <li><a href="http://www.js-css.cn"><img src="img/big0720121112195555.jpg" alt=""/></a></li>
+  </ul>
+  <ul class="slider_title">
+    <li><a href="http://www.js-css.cn">MV推荐：爱你不只在今天</a></li>
+    <li><a href="http://www.js-css.cn">MV推荐：搞笑MV在集合</a></li>
+    <li><a href="http://www.js-css.cn">专辑推荐：SHE-花又开了</a></li>
+    <li><a href="http://www.js-css.cn">MV推荐：罗志祥-今天你最漂亮</a></li>
+    <li><a href="http://www.js-css.cn">命运之门，华丽回归或黯然退出</a></li>
+    <li><a href="http://www.js-css.cn">独家首发：吴建豪-《不败》 </a></li>
+    <li><a href="http://www.js-css.cn">许嵩-北京演唱会</a></li>
+    <li><a href="http://www.js-css.cn">MV推荐：爱你就算与世界为敌</a></li>
+    <li><a href="http://www.js-css.cn">MV推荐：魏晨-最新穿越MV</a></li>
+    <li><a href="http://www.js-css.cn">MV推荐：孙丹菲-《泪流》</a></li>
+  </ul>
+  <ul class="slider_list">
+    <li index='1' class="current"><a href="http://www.js-css.cn"><img src="img/small_2.jpg" alt="" /><span class="border"></span></a></li>
+    <li index='2'><a href="http://www.js-css.cn"><img src="img/small_3.jpg" alt="" /><span class="border"></span></a></li>
+    <li index='3'><a href="http://www.js-css.cn"><img src="img/small_0020121113201926.jpg" alt="" /><span class="border"></span></a></li>
+    <li index='4'><a href="http://www.js-css.cn"><img src="img/small_0120120425202913.jpg" alt="" /><span class="border"></span></a></li>
+    <li index='5'><a href="http://www.js-css.cn"><img src="img/small_0220120423201353.jpg" alt="" /><span class="border"></span></a></li>
+    <li index='6'><a href="http://www.js-css.cn"><img src="img/small_0220120425203714.jpg" alt="" /><span class="border"></span></a></li>
+    <li index='7'><a href="http://www.js-css.cn"><img src="img/small_0320121112195755.jpg" alt="" /><span class="border"></span></a></li>
+    <li index='8'><a href="http://www.js-css.cn"><img src="img/small_0420121112210403.jpg" alt="" /><span class="border"></span></a></li>
+    <li index='9'><a href="http://www.js-css.cn"><img src="img/small_0520121113194658.jpg" alt="" /><span class="border"></span></a></li>
+    <li index='10'><a href="http://localhost" target="_blank"><img src="img/small_0720121112195555.jpg" alt="" /><span class="border"></span></a></li>
+  </ul>
+</div>
+</body>
+<script type="text/javascript">
+/* 
+ * @name: 图片幻灯片特效
+ * @time: 2013/03/02
+ * @author: 网友晓天
+ * @url: http://www.js-css.cn/
+ * @directiona: 关注js代码网，支持原创
+*/
+var myTimer;
+var currentIndex = -1;	//当前图片索引
+var $big = $('.big_img li');	
+var $title = $('.slider_title li');
+var $small = $('.slider_list li');	//小图索引
+function show(){		//进行索引位置的处理
+	var next = currentIndex < ($big.length -1)? currentIndex+1:0;	//判断图像的索引
+	showImg(next);
+}
+
+function showImg(index){			
+	$($big[index]).stop().fadeIn().siblings().stop().fadeOut();
+	$($title[index]).stop().show().siblings().stop().hide();
+	$($small[index]).addClass('current').siblings().removeClass('current');
+	currentIndex = index;
+}
+	
+$(function(){
+	myTimer = setInterval("show()",3000);
+	//大图停止事件
+	$big.hover(function(){clearInterval(myTimer);},function(){myTimer = setInterval("show()",3000);});
+	//小图事件
+	$small.hover(function(){
+		var index = $(this).attr('index');
+		clearInterval(myTimer);
+		showImg(index-1);
+	},function(){
+		myTimer = setInterval("show()",3000);
+	});
+	show();		
+});
+</script>
+</html>

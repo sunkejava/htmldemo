@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <title>知名常用jQuery表单验证插件FormValidator</title>
+	<meta name="author" content="JS代码网" />
+	<meta name="keywords" content="JS代码,JS特效,jQuery表单验证插件,JS表单验证,JS表单提交,jQuery表单提交验证,jQuery check form,jQuery表单插件" />
+	<meta name="description" content="非常实用的jQuery表单验证插件,JS表单验证代码,兼容性非常好,JS代码网推荐下载" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" href="Images/css.css" rel="Stylesheet" />
+    <script type="text/javascript" src="Scripts/jquery1.2.6.js"></script>
+    <script type="text/javascript" src="Scripts/jQuery.FormValidator.js"></script>
+</head>
+<body>
+    <table cellpadding="0" cellspacing="0" class="TopMenu">
+        <tr>
+            <th>JS代码网</th>
+            <td></td>
+        </tr>
+    </table>
+    <h5>控件值不能为空</h5>
+    <h6>示例1：</h6>
+    <fieldset>
+        <legend>验证之前，除去控件值首尾空格。</legend>      
+        <form id="FormDemo01_0" action="Demo.01.htm" method="post">
+            <dl style="vertical-align:middle;">
+                <dt>用户名：</dt>
+                <dd><input type="text" id="UserName0" name="UserName0" /> <tt id="TipUserName0"></tt></dd>
+                <dd><input type="submit" value="提交" /></dd>
+            </dl>                        
+        </form>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#FormDemo01_0").SetValidateSettings({});
+                $("#UserName0").SetValidateSettings({
+                    FormValidate: {
+                        Empty: {
+                            Value: true,
+                            Message: "用户名不能为空"
+                        }
+                    },
+                    Message: {
+                        Text: {
+                            Show: "请输入用户名！",
+                            Success: "输入正确！",
+                            Error: "必须输入用户名！",
+                            Focus: "正在输入..."
+                        },
+                        MessageSpaceHolderID: "TipUserName0"
+                    }
+                });
+            });
+        </script>
+    </fieldset>
+    <h6>示例2：</h6>
+    <fieldset>
+        <legend>验证之前，不除去控件值首尾空格。</legend> 
+        <form id="FormDemo01_1" action="Demo.01.htm" method="post">
+            <dl>
+                <dt>用户名</dt>
+                <dd><input type="text" id="UserName1" name="UserName1" /> <tt id="TipUserName1"></tt></dd>
+                <dd><input type="submit" value="提交" /></dd>
+            </dl>                        
+        </form>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#FormDemo01_1").SetValidateSettings({});
+                $("#UserName1").SetValidateSettings({
+                    FormValidate: {
+                        Empty: {
+                            Value: true,
+                            Message: "用户名不能为空"
+                        }
+                    },
+                    Config: {
+                        AutoTrim: false //取消默认的自动去除首尾空格设置
+                    },
+                    Message: {
+                        Text: {
+                            Show: "请输入用户名！",
+                            Success: "输入正确！",
+                            Error: "必须输入用户名！",
+                            Focus: "正在输入..."
+                        },
+                        MessageSpaceHolderID: "TipUserName1"
+                    }
+                });
+            });
+        </script>
+    </fieldset>
+    <div class="BottomCopyright">
+        <div>大白制作·保留所有权利<br /><span>&copy;2009 Dabai All rights reserved . </span></div>
+    </div>
+</body>
+</html>

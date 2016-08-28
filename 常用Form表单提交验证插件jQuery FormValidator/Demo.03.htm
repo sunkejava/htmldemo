@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>知名常用jQuery表单验证插件FormValidator</title>
+	<meta name="author" content="JS代码网" />
+	<meta name="keywords" content="JS代码,JS特效,jQuery表单验证插件,JS表单验证,JS表单提交,jQuery表单提交验证,jQuery check form,jQuery表单插件" />
+	<meta name="description" content="非常实用的jQuery表单验证插件,JS表单验证代码,兼容性非常好,JS代码网推荐下载" />   
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" href="Images/css.css" rel="Stylesheet" />
+    <script type="text/javascript" src="Scripts/jquery1.2.6.js"></script>
+    <script type="text/javascript" src="Scripts/jQuery.FormValidator.js"></script>
+</head>
+<body>
+    <table cellpadding="0" cellspacing="0" class="TopMenu">
+        <tr>
+            <th>JS代码网</th>
+            <td></td>
+        </tr>
+    </table>
+    <h5>选中控件数量限制</h5>
+    <h6>示例1：</h6>
+    <fieldset>
+        <legend>限制控件选中数量</legend>      
+        <form id="FormDemo03_0" action="Demo.03.htm" method="post">
+            <dl style="vertical-align:middle;">
+                <dt>爱好：</dt>
+                <dd><input type="checkbox" name="ChkLike" id="ChkLike0" />体育 <input type="checkbox" name="ChkLike" />音乐 <input type="checkbox" name="ChkLike" />游戏 <input type="checkbox" name="ChkLike" />上网<tt id="TipChkLike"></tt></dd>
+                <dt>联系方式：</dt>
+                <dd><select id="LstLink" multiple="multiple"><option value="0">QQ：759922422</option><option>Email:tinker@163.com</option><option>电话</option><option>传真</option></select><tt id="TipLstLink"></tt></dd>
+                <dd><input type="submit" value="提交" /></dd>
+            </dl>                        
+        </form>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#FormDemo03_0").SetValidateSettings({});
+                $(":checkbox[name='ChkLike']").SetValidateSettings({
+                    FormValidate: {
+                        MaxLength: {
+                            Value: 3,
+                            Message: "爱好最多选中3项"
+                        },
+                        MinLength: {
+                            Value: 2,
+                            Message: "爱好最少需要选中2项"
+                        }
+                    },
+                    Message: {
+                        Text: {
+                            Show: "请选择您的爱好！",
+                            Success: "正确！",
+                            Focus: "好好考虑哦"
+                        },
+                        MessageSpaceHolderID: "TipChkLike"
+                    }
+                });
+                $("#LstLink").SetValidateSettings({
+                    FormValidate: {
+                        MaxLength: {
+                            Value: 3,
+                            Message: "联系方式最多选中3项"
+                        },
+                        MinLength: {
+                            Value: 2,
+                            Message: "联系方式最少需要选中2项"
+                        }
+                    },
+                    Message: {
+                        Text: {
+                            Show: "请选择您的联系方式！",
+                            Success: "正确！",
+                            Focus: "好好考虑哦"
+                        },
+                        MessageSpaceHolderID: "TipLstLink"
+                    }
+                });
+            });
+        </script>
+    </fieldset>
+    <div class="BottomCopyright">
+        <div>大白制作·保留所有权利<br /><span>&copy;2009 Dabai All rights reserved . </span></div>
+    </div>
+</body>
+</html>
