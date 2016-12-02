@@ -1,6 +1,2 @@
 htmlWebDemo
-常用HTMLDemo公告大概给对方GV
-asdfsdfsdf
-sdfsdfsdf
-asdfasdfsdf
-sdfsdfsdfsd
+常用HTMLDemo
